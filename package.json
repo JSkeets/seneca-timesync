@@ -1,0 +1,17 @@
+{
+  "name": "seneca-timesync-excercise",
+  "scripts": {
+    "service1": "nodemon service1.js",
+    "service2": "nodemon service2.js",
+    "service3": "nodemon service3.js"
+  },
+  "version": "0.2.0",
+  "private": true,
+  "dependencies": {
+    "nodemon": "1.11.0",
+    "seneca": "3.3.0",
+    "seneca-web": "^2.1.0",
+    "seneca-web-adapter-express": "^1.0.2",
+    "timesync": "0.4.0"
+  }
+}

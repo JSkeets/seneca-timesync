@@ -1,0 +1,50 @@
+version: '3'
+
+services:
+  # Base Docker image used to run all containers
+  base:
+    build:
+      context: .
+      dockerfile: 'Dockerfile'
+
+  service1:
+    image: senecatimesyncexercise_base:latest
+    command: 'npm run service1'
+    network_mode: "host"
+    volumes:
+      - .:/seneca-timesync-exercise
+      - /seneca-timesync-exercise/node_modules
+
+  service2:
+    image: senecatimesyncexercise_base:latest
+    command: 'npm run service2'
+    network_mode: "host"
+    volumes:
+      - .:/seneca-timesync-exercise
+      - /seneca-timesync-exercise/node_modules
+
+  service3:
+    image: senecatimesyncexercise_base:latest
+    command: 'npm run service3'
+    network_mode: "host"
+    volumes:
+      - .:/seneca-timesync-exercise
+      - /seneca-timesync-exercise/node_modules
+
+  # Start a Node.js console
+  console:
+    image: senecatimesyncexercise_base:latest
+    command: 'node'
+    network_mode: "host"
+    volumes:
+      - .:/seneca-timesync-exercise
+      - /seneca-timesync-exercise/node_modules
+
+  # Run bash in Docker environment
+  bash:
+    image: senecatimesyncexercise_base:latest
+    command: '/bin/bash'
+    network_mode: "host"
+    volumes:
+      - .:/seneca-timesync-exercise
+      - /seneca-timesync-exercise/node_modules
